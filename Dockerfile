@@ -1,3 +1,8 @@
-FROM nginx:alpine
-COPY static /usr/share/nginx/html
-LABEL maintainer = "usha.mandya@docker.com"
+FROM nginx:latest
+
+COPY index.html /usr/share/nginx/html
+COPY linux.png /usr/share/nginx/html
+
+EXPOSE 80 443 	
+
+CMD ["nginx", "-g", "daemon off;"]
